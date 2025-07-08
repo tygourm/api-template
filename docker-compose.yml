@@ -1,0 +1,27 @@
+services:
+  app:
+    image: api-template
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    environment:
+      HOST: 0.0.0.0
+      WORKERS: 1
+
+      # Logs
+      LOGS_LEVEL: ERROR
+
+      # Data
+      DATABASE_URL: postgresql://postgres:CHANGEME@postgres:5432/db
+
+  postgres:
+    image: postgres:17.5-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: CHANGEME
+    volumes:
+      - ./initdb.sql:/docker-entrypoint-initdb.d/initdb.sql

@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+      - run: uv sync --frozen --group docs
+      - run: uv run mkdocs build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+      - run: uv sync --frozen --group lint
+      - run: uv run ruff check --no-cache
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+      - run: uv sync --frozen --group docs --group test
+      - run: uv run mkdocs build -d static/site
+      - run: uv run pytest -p no:cacheprovider
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+      - run: uv build
