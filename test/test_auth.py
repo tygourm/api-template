@@ -33,7 +33,7 @@ def test_auth(api_request_context: APIRequestContext) -> None:
     assert response.status == 401
 
     # Get user with non-existing user id 401
-    bad_token = injector.jwt_service.encode({"id": str(uuid4())}, settings.jwt_key, settings.jwt_expires_in_seconds)
+    bad_token = injector.jwt_service.encode({"sub": str(uuid4())}, settings.jwt_key, settings.jwt_expires_in_seconds)
     response = api_request_context.get("/auth/user", headers={"Authorization": f"Bearer {bad_token}"})
     assert response.status == 401
 

@@ -10,7 +10,7 @@ services:
       WORKERS: 1
 
       # Logs
-      LOGS_LEVEL: ERROR
+      LOGS_LEVEL: INFO
 
       # Data
       DATABASE_URL: postgresql://postgres:CHANGEME@postgres:5432/db
