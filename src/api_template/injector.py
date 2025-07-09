@@ -21,11 +21,7 @@ class Injector:
         self.jwt_service: JwtService = HS256JwtService()
 
         # Use cases
-        self.auth_use_case = AuthUseCase(
-            self.user_repository,
-            self.hash_service,
-            self.jwt_service,
-        )
+        self.auth_use_case = AuthUseCase(self.user_repository, self.hash_service, self.jwt_service)
 
 
 injector = Injector()

@@ -6,7 +6,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.insertFinalNewline": true,
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 120,
   "prettier.proseWrap": "always",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"

@@ -68,6 +68,7 @@ def main() -> None:
         port=settings.port,
         reload=settings.reload,
         workers=settings.workers,
+        log_level=settings.logs_level.lower(),
     )
 
 

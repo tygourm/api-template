@@ -6,11 +6,7 @@ from fastapi import APIRouter, HTTPException, Request, status
 from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel
 
-from src.api_template.core.errors import (
-    BadCredentialsError,
-    UserDoesNotExistError,
-    UsernameAlreadyExistsError,
-)
+from src.api_template.core.errors import BadCredentialsError, UserDoesNotExistError, UsernameAlreadyExistsError
 from src.api_template.injector import injector
 from src.api_template.logger import get_logger
 

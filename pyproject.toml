@@ -33,7 +33,7 @@ testpaths = ["test"]
 addopts = ["--cov=main", "--cov=src", "--cov-report=html", "--cov-report=term"]
 
 [tool.ruff]
-line-length = 88
+line-length = 120
 indent-width = 4
 
 [tool.ruff.format]
