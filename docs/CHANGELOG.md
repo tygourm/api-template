@@ -14,6 +14,10 @@ and this project adheres to
 - 🗃️ Change models default values
 - 🎨 Increase line width
 
+### Fixed
+
+- 🚨 Fix linter warnings
+
 ## [1.0.0] - 2025-07-08
 
 ### Added

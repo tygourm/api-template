@@ -36,7 +36,7 @@ jobs:
           python-version-file: pyproject.toml
       - run: uv sync --frozen --group docs --group test
       - run: uv run mkdocs build -d static/site
-      - run: uv run pytest -p no:cacheprovider
+      - run: uv run pytest -p no:cacheprovider --cov-fail-under=90
 
   build:
     runs-on: ubuntu-latest

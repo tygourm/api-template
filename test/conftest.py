@@ -15,7 +15,7 @@ def postgres() -> Generator[PostgresContainer]:
         image="postgres:17.5-alpine",
         port=5432,
         username="postgres",
-        password="CHANGEME",
+        password="CHANGEME",  # noqa:S106 hardcoded-password-func-arg
         dbname="db",
     )
     container.with_bind_ports(5432, 5432)
