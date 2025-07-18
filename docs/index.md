@@ -7,11 +7,13 @@ Yet another template.
     - **DRY** Don't Repeat Yourself
     - **KISS** Keep It Simple, Stupid
     - **YAGNI** You Ain't Gonna Need It
-    - **SOLID** Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion
+    - **SOLID** Single responsibility, Open/closed, Liskov substitution, Interface
+    segregation, Dependency inversion
 
 ## Prerequisites
 
-This project uses [uv](https://docs.astral.sh/uv) as a Python package and project manager.
+This project uses [uv](https://docs.astral.sh/uv) as a Python package and
+project manager.
 
 ## Development
 
@@ -31,9 +33,10 @@ source .venv/bin/activate
 
 !!! tip "Python & VS Code"
 
-    - If dependencies are not recognized in VS Code, you can run the command `Ctrl+Shift+P > Python: Select Interpreter` and
-    select `./.venv/bin/python`.
-    - After updating the dependencies, you can run the command `Ctrl+Shift+P > Developer: Reload Window` to refresh the IDE.
+    - If dependencies are not recognized in VS Code, you can run the command
+    `Ctrl+Shift+P > Python: Select Interpreter` and select `./.venv/bin/python`.
+    - After updating the dependencies, you can run the command
+    `Ctrl+Shift+P > Developer: Reload Window` to refresh the IDE.
 
 ### App
 
@@ -52,8 +55,9 @@ pytest -p no:cacheprovider
 
 !!! info "pytest cache"
 
-    The `-p no:cacheprovider` option prevents pytest from using the cache, which makes the results more reliable. This is
-    recommended for development but not mandatory, the CI will use it anyway.
+    The `-p no:cacheprovider` option prevents pytest from using the cache, which
+    makes the results more reliable. This is recommended for development but not
+    mandatory, the CI will use it anyway.
 
 ## Deployment
 
@@ -73,7 +77,9 @@ docker compose up -d --build
 
 ### Docs
 
-This project uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material) as a documentation framework.
+This project uses
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material) as a
+documentation framework.
 
 ```bash
 mkdocs serve # Serve docs
@@ -82,7 +88,8 @@ mkdocs build -d static/site # Build docs
 
 ### Lint / Format
 
-This project uses [Ruff](https://docs.astral.sh/ruff) as a Python linter and code formatter.
+This project uses [Ruff](https://docs.astral.sh/ruff) as a Python linter and
+code formatter.
 
 ```bash
 ruff check --no-cache # Lint
@@ -91,9 +98,11 @@ ruff format --no-cache # Format
 
 !!! info "Ruff cache"
 
-    The `--no-cache` option prevents Ruff from using the cache, which makes the results more reliable. This is recommended
-    for development but not mandatory, the CI will use it anyway.
+    The `--no-cache` option prevents Ruff from using the cache, which makes the
+    results more reliable. This is recommended for development but not mandatory,
+    the CI will use it anyway.
 
 !!! warning "Ruff version"
 
-    The version of Ruff must match the one shipped with the `charliermarsh.ruff` VS Code extension.
+    The version of Ruff must match the one shipped with the `charliermarsh.ruff` VS
+    Code extension.

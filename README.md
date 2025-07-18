@@ -4,7 +4,8 @@ Yet another template.
 
 ## Prerequisites
 
-This project uses [uv](https://docs.astral.sh/uv) as a Python package and project manager.
+This project uses [uv](https://docs.astral.sh/uv) as a Python package and
+project manager.
 
 ## Development
 
@@ -55,7 +56,9 @@ docker compose up -d --build
 
 ### Docs
 
-This project uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material) as a documentation framework.
+This project uses
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material) as a
+documentation framework.
 
 ```bash
 mkdocs serve # Serve docs
@@ -64,7 +67,8 @@ mkdocs build -d static/site # Build docs
 
 ### Lint / Format
 
-This project uses [Ruff](https://docs.astral.sh/ruff) as a Python linter and code formatter.
+This project uses [Ruff](https://docs.astral.sh/ruff) as a Python linter and
+code formatter.
 
 ```bash
 ruff check --no-cache # Lint

@@ -16,12 +16,12 @@ class User:
 class UserRepository(ABC):
     @abstractmethod
     def create(self, username: str, password: str) -> User:
-        pass  # pragma: no cover
+        pass
 
     @abstractmethod
     def read_by_id(self, user_id: UUID) -> User | None:
-        pass  # pragma: no cover
+        pass
 
     @abstractmethod
     def read_by_username(self, username: str) -> User | None:
-        pass  # pragma: no cover
+        pass

@@ -32,33 +32,16 @@ pythonpath = ["."]
 testpaths = ["test"]
 addopts = ["--cov=main", "--cov=src", "--cov-report=html", "--cov-report=term"]
 
-[tool.ruff]
-line-length = 120
-indent-width = 4
-
 [tool.ruff.format]
 indent-style = "space"
 quote-style = "double"
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = [
-    "COM812", # missing-trailing-comma
-    "D100",   # undocumented-public-module
-    "D101",   # undocumented-public-class
-    "D102",   # undocumented-public-method
-    "D103",   # undocumented-public-function
-    "D107",   # undocumented-public-init
-    "D203",   # incorrect-blank-line-before-class
-    "D213",   # multi-line-summary-second-line
-    "INP001", # implicit-namespace-package
-]
+ignore = []
 
 [tool.ruff.lint.isort]
 known-third-party = ["alembic"]
 
 [tool.ruff.lint.per-file-ignores]
-"*test*.py" = [
-    "PLR2004", # magic-value-comparison
-    "S101",    # assert
-]
+"*test*.py" = []

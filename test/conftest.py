@@ -11,9 +11,18 @@ import main
 
 @pytest.fixture(scope="session")
 def postgres() -> Generator[PostgresContainer]:
-    container = PostgresContainer("postgres:17.5-alpine", 5432, "postgres", "CHANGEME", "db")
+    container = PostgresContainer(
+        image="postgres:17.5-alpine",
+        port=5432,
+        username="postgres",
+        password="CHANGEME",
+        dbname="db",
+    )
     container.with_bind_ports(5432, 5432)
-    container.with_volume_mapping(Path.cwd() / "initdb.sql", "/docker-entrypoint-initdb.d/initdb.sql")
+    container.with_volume_mapping(
+        host=Path.cwd() / "initdb.sql",
+        container="/docker-entrypoint-initdb.d/initdb.sql",
+    )
     with container:
         yield container
 
@@ -29,7 +38,9 @@ def app(postgres: PostgresContainer) -> Generator[str]:
 
 
 @pytest.fixture
-def api_request_context(app: str, playwright: Playwright) -> Generator[APIRequestContext]:
+def api_request_context(
+    app: str, playwright: Playwright
+) -> Generator[APIRequestContext]:
     context = playwright.request.new_context(base_url=app)
     yield context
     context.dispose()
